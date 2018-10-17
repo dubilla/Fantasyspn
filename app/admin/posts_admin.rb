@@ -5,7 +5,7 @@ Trestle.resource(:posts) do
 
   # Customize the table columns shown on the index view.
   table do
-    column :name, link: true
+    column :title, link: true
     column :updated_at, header: "Last Updated", align: :center
     actions
   end
@@ -14,7 +14,7 @@ Trestle.resource(:posts) do
   form do |post|
     tab :post do
       text_field :title
-      text_field :content
+      editor :content
     end
   end
 
