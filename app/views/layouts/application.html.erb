@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <h1><%= link_to "FantasySPN", root_path  %></h1>
+  </header>
 
 <%= yield %>
 
+  <footer>
+    <p>FantasySPN</p>
+    <p>Made with &lt;3 in Brooklyn, NY</p>
+    </ hr>
+    <p>&copy; 2018 FantasySPN</p>
+  </footer>
 </body>
 </html>
