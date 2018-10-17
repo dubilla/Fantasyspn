@@ -27,6 +27,7 @@ gem 'trestle'
 gem 'trestle-simplemde'
 gem 'redcarpet'
 gem 'draper'
+gem 'bootstrap', '~> 4.1.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
