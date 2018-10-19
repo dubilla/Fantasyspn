@@ -3,6 +3,7 @@
     <% @posts.each do |post| %>
       <li>
         <%= link_to post.title, post %>
+        <span class="post-published-wrapper">| <span class="post-published"><%= post.published_at.strftime("%B %d, %Y") %></span></span>
       </li>
     <% end %>
   </ul>
