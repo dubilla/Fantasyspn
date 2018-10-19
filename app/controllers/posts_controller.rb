@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.order(published_at: :desc).all
+    @posts = Post.where.not(published_at: nil).order(published_at: :desc).all
   end
 
   def show
