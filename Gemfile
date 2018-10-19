@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'trestle'
 gem 'trestle-simplemde'
+gem 'trestle-auth'
 gem 'redcarpet'
 gem 'draper'
 gem 'bootstrap', '~> 4.1.3'
