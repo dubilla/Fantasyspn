@@ -7,6 +7,7 @@ Trestle.resource(:posts) do
   table do
     column :title, link: true
     column :updated_at, header: "Last Updated", align: :center
+    column :published_at
     actions
   end
 
@@ -14,6 +15,7 @@ Trestle.resource(:posts) do
   form do |post|
     tab :post do
       text_field :title
+      datetime_field :published_at
       editor :content
     end
   end
