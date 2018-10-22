@@ -28,6 +28,7 @@ gem 'redcarpet'
 gem 'draper'
 gem 'bootstrap', '~> 4.1.3'
 gem 'bootsnap'
+gem 'aws-sdk-s3', require: false
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
