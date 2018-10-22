@@ -17,6 +17,10 @@ Trestle.resource(:posts) do
       text_field :title
       datetime_field :published_at
       editor :content
+      form_group :image do
+        concat image_tag(Rails.application.routes.url_helpers.rails_blob_path(Post.first.header_image, only_path: true)) if instance.header_image.attached?
+        raw_file_field :header_image
+      end
     end
   end
 
