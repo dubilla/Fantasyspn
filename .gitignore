@@ -21,3 +21,5 @@
 
 # Ignore minimagick variants
 /storage
+
+dump.rdb
