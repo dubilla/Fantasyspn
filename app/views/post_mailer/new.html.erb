@@ -1,2 +1,5 @@
 <h1><%= @post.title %></h1>
-<%= @post.content.html_safe %>
+<% if @post.header_image.attached? %>
+  <%= image_tag @post.header_image.variant(resize: "750x450"), class: "post-header-image" %>
+<% end %>
+<%= @post.content_html.html_safe %>
