@@ -1,0 +1,53 @@
+/*
+ * Posts
+ */
+.post-published-wrapper {
+  font-size: 0.8em;
+}
+.post-published {
+  font-style: italic;
+}
+
+/*
+ * Post
+ */
+.post-headline {
+  font-size: 2.2em;
+}
+.post-header-image {
+  margin-bottom: 10px;
+}
+@media (min-width: 360px) {
+  .post-header-image {
+    width: 270px;
+  }
+}
+@media (min-width: 480px) {
+  .post {
+    padding: 0 10px;
+  }
+  .post-header-image {
+    width: 380px;
+  }
+}@media (min-width: 620px) {
+  .post-header-image {
+    width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .post {
+    width: 730px
+  }
+  .post-header-image {
+    margin-bottom: 20px;
+    width: 650px;
+  }
+}
+@media (min-width: 900px) {
+  .post {
+    width: 770px;
+  }
+  .post-header-image {
+    width: 720px;
+  }
+}
