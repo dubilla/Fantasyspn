@@ -32,6 +32,8 @@ gem 'aws-sdk-s3', require: false
 gem 'mini_magick'
 gem 'sidekiq'
 gem 'sendgrid-ruby'
+gem 'premailer-rails'
+gem 'nokogiri'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
