@@ -1,7 +1,7 @@
 class PostMailer < ApplicationMailer
   def new
     @post = params[:post].decorate
-    @owner = params[:owner]
-    mail(to: @owner.email, subject: @post.title)
+    @owners = params[:owners]
+    mail(to: @owners.map(&:email), subject: @post.title)
   end
 end
