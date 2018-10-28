@@ -1,4 +1,4 @@
-class SendUnsentPublishedPostsJob < ApplicationJob
+class SendPostsJob < ApplicationJob
   queue_as :default
 
   def perform
