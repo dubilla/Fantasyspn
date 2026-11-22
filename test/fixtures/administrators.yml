@@ -1,17 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  email: MyString
-  password_digest: MyString
-  first_name: MyString
-  last_name: MyString
-  remember_token: MyString
-  remember_token_expires_at: 2018-10-18 23:29:36
-
-two:
-  email: MyString
-  password_digest: MyString
-  first_name: MyString
-  last_name: MyString
-  remember_token: MyString
-  remember_token_expires_at: 2018-10-18 23:29:36
+commish:
+  email: commish@example.com
+  first_name: Commish
+  last_name: Ioner
+  password_digest: <%= BCrypt::Password.create("password", cost: BCrypt::Engine::MIN_COST) %>
