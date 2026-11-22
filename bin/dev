@@ -2,7 +2,13 @@
 set -uo pipefail
 cd "$(dirname "$0")/.."
 
-port="${PORT:-3010}"
+if [ -f .env ]; then
+  set -a
+  . ./.env
+  set +a
+fi
+
+port="${PORT:-3000}"
 if lsof -nP -iTCP:"$port" -sTCP:LISTEN >/dev/null 2>&1; then
   echo "Port $port is already in use (another bin/dev?). Set PORT to use a different one." >&2
   exit 1
