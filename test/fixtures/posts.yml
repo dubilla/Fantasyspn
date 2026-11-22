@@ -1,0 +1,15 @@
+sent:
+  title: Week 1 Power Rankings
+  content: "## Contenders\n\n**Team Alpha** looked unstoppable."
+  published_at: <%= 3.days.ago.to_s(:db) %>
+  sent_at: <%= 3.days.ago.to_s(:db) %>
+
+published:
+  title: Trade Deadline Recap
+  content: Three trades went through.
+  published_at: <%= 1.day.ago.to_s(:db) %>
+
+draft:
+  title: Half-written draft
+  content: Not ready.
+  published_at:

@@ -26,3 +26,6 @@ dump.rdb
 
 # Local planning
 /backlog.md
+
+# Dev server log
+/logs
