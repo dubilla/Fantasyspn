@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'posts#index'
   resources :posts, only: [:index, :show]
+  resources :seasons, only: [:show]
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'

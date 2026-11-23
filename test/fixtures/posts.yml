@@ -1,15 +1,25 @@
 sent:
   title: Week 1 Power Rankings
+  season: this_season
   content: "## Contenders\n\n**Team Alpha** looked unstoppable."
   published_at: <%= 3.days.ago.to_s(:db) %>
   sent_at: <%= 3.days.ago.to_s(:db) %>
 
 published:
   title: Trade Deadline Recap
+  season: this_season
   content: Three trades went through.
   published_at: <%= 1.day.ago.to_s(:db) %>
 
 draft:
   title: Half-written draft
+  season: this_season
   content: Not ready.
   published_at:
+
+last_season_finale:
+  title: Champion Crowned
+  season: last_season
+  content: Team Charlie takes the title.
+  published_at: <%= 8.months.ago.to_s(:db) %>
+  sent_at: <%= 8.months.ago.to_s(:db) %>
