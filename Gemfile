@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby "2.7.8"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.8'
+gem 'rails', '~> 6.0.6'
 # Use postgres as the database for Active Record
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.6'
@@ -29,7 +29,7 @@ gem 'redcarpet'
 gem 'draper'
 gem 'bootstrap', '~> 4.1.3'
 gem 'bootsnap'
-gem 'aws-sdk-s3', require: false
+gem 'aws-sdk-s3', '~> 1.48', require: false
 gem 'mini_magick'
 gem 'sidekiq'
 gem 'sendgrid-ruby'
@@ -52,7 +52,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '>= 4.1'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
