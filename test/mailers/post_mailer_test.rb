@@ -12,4 +12,13 @@ class PostMailerTest < ActionMailer::TestCase
     email.deliver_now
     assert_not_nil post.reload.sent_at
   end
+
+  test "marks a post without a season as sent" do
+    post = posts(:published)
+    post.update_column(:season_id, nil)
+
+    PostMailer.with(post: post).new.deliver_now
+
+    assert_not_nil post.reload.sent_at
+  end
 end

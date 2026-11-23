@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.where.not(published_at: nil).order(published_at: :desc).all
+    @season = Season.current
+    @posts = @season ? @season.posts.published.order(published_at: :desc) : Post.none
+    render "seasons/show"
   end
 
   def show

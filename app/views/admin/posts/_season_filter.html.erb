@@ -1,0 +1,15 @@
+<ul class="nav nav-pills">
+  <li class="<%= "active" if params[:season_id].blank? %>">
+    <%= link_to "All seasons", trestle.posts_admin_index_path %>
+  </li>
+  <% Season.newest_first.each do |season| %>
+    <li class="<%= "active" if params[:season_id] == season.id.to_s %>">
+      <%= link_to season.name, trestle.posts_admin_index_path(season_id: season.id) %>
+    </li>
+  <% end %>
+  <% if Post.where(season_id: nil).exists? %>
+    <li class="<%= "active" if params[:season_id] == "none" %>">
+      <%= link_to "No season", trestle.posts_admin_index_path(season_id: "none") %>
+    </li>
+  <% end %>
+</ul>

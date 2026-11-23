@@ -1,4 +1,7 @@
 <article class="post">
+  <% if @post.season %>
+    <p class="post-season"><%= link_to @post.season.name, @post.season %></p>
+  <% end %>
   <h2 class="post-headline"><%= @post.title %></h2>
   <% if @post.header_image.attached? %>
     <%= image_tag @post.header_image.variant(resize: "750x450"), class: "post-header-image" %>

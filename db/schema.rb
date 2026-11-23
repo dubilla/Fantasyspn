@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_28_021535) do
+ActiveRecord::Schema.define(version: 2026_11_22_000001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,7 +60,16 @@ ActiveRecord::Schema.define(version: 2018_10_28_021535) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "sent_at"
+    t.bigint "season_id"
     t.index ["published_at"], name: "index_posts_on_published_at"
+  end
+
+  create_table "seasons", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "start_year", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["start_year"], name: "index_seasons_on_start_year", unique: true
   end
 
 end

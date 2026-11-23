@@ -230,4 +230,10 @@ Trestle.configure do |config|
   # config.auth.remember.cookie, ->(user) {
   #   { value: user.remember_token, expires: user.remember_token_expires_at }
   # }
+
+  config.persistent_params << :season_id
+
+  config.hook("resource.index.header", if: -> { admin.admin_name == "posts" }) do
+    render "admin/posts/season_filter"
+  end
 end
