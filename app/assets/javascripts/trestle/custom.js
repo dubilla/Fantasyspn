@@ -5,3 +5,10 @@
 // within individual partials and `require` them here.
 //
 //  e.g. //= require "trestle/custom/my_custom_js"
+
+(function () {
+  var zone = window.Intl && Intl.DateTimeFormat().resolvedOptions().timeZone;
+  if (zone) {
+    document.cookie = "time_zone=" + encodeURIComponent(zone) + "; path=/admin; max-age=31536000; SameSite=Lax";
+  }
+})();

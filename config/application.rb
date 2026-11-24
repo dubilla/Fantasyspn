@@ -11,6 +11,8 @@ module Fantasyspn
     # Initialize configuration defaults for Rails 6.0.
     config.load_defaults 6.0
 
+    config.time_zone = "Eastern Time (US & Canada)"
+
     config.active_job.queue_adapter = :sidekiq
 
     # Settings in config/environments/* take precedence over those specified here.

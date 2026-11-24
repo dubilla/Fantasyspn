@@ -30,7 +30,8 @@ Trestle.resource(:posts) do
     tab :post do
       text_field :title
       collection_select :season_id, Season.newest_first, :id, :name, include_blank: post.season_id.nil?
-      datetime_field :published_at
+      datetime_field :published_at, help: "Times are in #{Time.zone.tzinfo.name.tr('_', ' ')} (#{Time.zone.now.strftime('%Z')})"
+      concat hidden_field_tag(:time_zone, Time.zone.tzinfo.name)
       editor :content
       form_group :image do
         concat image_tag(Rails.application.routes.url_helpers.rails_blob_path(instance.header_image, only_path: true)) if instance.header_image.attached?
