@@ -83,6 +83,13 @@ Trestle.configure do |config|
   #   Rails.logger.debug("Around action (after)")
   # end
 
+  # Read and show times in the commissioner's browser time zone (cookie set by trestle/custom.js).
+  # A submitted form names the zone it was rendered in, so its times are parsed in that same zone.
+  config.around_action do |controller, action|
+    name = controller.params[:time_zone].presence || controller.request.cookies["time_zone"]
+    Time.use_zone(ActiveSupport::TimeZone[name.to_s]) { action.call }
+  end
+
   # Specify a custom hook to be injected into the admin.
   #
   # config.hook(:stylesheets) do
@@ -186,6 +193,9 @@ Trestle.configure do |config|
   # config.auth.time_zone = ->(user) {
   #   user.time_zone if user.respond_to?(:time_zone)
   # }
+  #
+  # Off: the browser time zone around_action above sets the zone instead.
+  config.auth.time_zone = nil
 
   # Specify the redirect location after a successful login.
   # Defaults to the main Trestle admin path.
